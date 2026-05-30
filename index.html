@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Smart Agriculture</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🌱 AI Smart Agriculture</h1>
+
+    <p class="subtitle">
+        Crop Recommendation System
+    </p>
+
+    <form action="/predict" method="POST">
+
+        <input type="number"
+               name="Nitrogen"
+               placeholder="Nitrogen"
+               required>
+
+        <input type="number"
+               name="Phosphorus"
+               placeholder="Phosphorus"
+               required>
+
+        <input type="number"
+               name="Potassium"
+               placeholder="Potassium"
+               required>
+
+        <input type="number"
+               step="any"
+               name="Temperature"
+               placeholder="Temperature"
+               required>
+
+        <input type="number"
+               step="any"
+               name="Humidity"
+               placeholder="Humidity"
+               required>
+
+        <input type="number"
+               step="any"
+               name="Ph"
+               placeholder="pH Value"
+               required>
+
+        <input type="number"
+               step="any"
+               name="Rainfall"
+               placeholder="Rainfall"
+               required>
+
+        <button type="submit">
+            Predict Crop
+        </button>
+
+    </form>
+
+    <div class="result">
+        {{ prediction_text }}
+    </div>
+
+</div>
+
+</body>
+</html>
